@@ -1,8 +1,9 @@
 package main
 
 import (
-	"ramdisk"
 	"log"
+
+	"github.com/Golanding/ramdisk/ramdisk"
 )
 
 func main() {
@@ -23,8 +24,8 @@ func main() {
 			case event = <-fsevents.Unmount:
 			}
 		}
-	} ()
+	}()
 
-	ramdisk.MountAndServe("/mnt/myramdisk", &fsevents)
+	ramdisk.MountAndServe(`D:\`, &fsevents)
+	// ramdisk.MountAndServe("/mnt/myramdisk", &fsevents)
 }
-
